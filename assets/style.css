@@ -24,7 +24,7 @@ header h1 {
     padding-top: 10px;
 }
 
-.search-bar {
+.search-section {
     display: block;
 
 }
@@ -34,7 +34,7 @@ h2 {
     margin: 0 0 10px;
 }
 
-.search-form {
+.searchform {
     padding: 10px;
     margin: 10px;
     font-size:large;
