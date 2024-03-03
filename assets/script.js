@@ -13,7 +13,7 @@ function searchFormSubmit(event) {
 
     searchInputVal.value;// the text inputed in the search bar 
     console.log(searchInputVal); // checks that the input value works
-    if (!searchInputVal) {
+    if (searchInputVal !== null) {
         alert("Please Enter a City Name!");// alert for when the search button is pressed with no city name.
         return;
     }
