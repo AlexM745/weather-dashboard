@@ -14,6 +14,7 @@ let cityHumidity = document.querySelector("#humid");
 
 
 
+// searches for the city name through the weather API
 function searchForecast (event){
 
     event.preventDefault();
@@ -26,9 +27,9 @@ function searchForecast (event){
         return;
     }
 
-
+// current weather api call
     let weatherApiUrl = "https://api.openweathermap.org/data/2.5/weather?q="+searchInputVal.value.trim()+"&appid="+ apiKey;
-
+    
 
     fetch (weatherApiUrl)
         .then (response =>{
@@ -36,10 +37,20 @@ function searchForecast (event){
                 throw new ERROR("Network reponse was not okay");
             }
             return response.json();
+
+
         })
 
         .then(data => {
-            currentForecast.textContent = JSON.stringify(data, null, 2);
+            cityName.textContent = data.name;
+            cityHumidity.textContent = data.main.humidity+"%";
+
+            let  fahrenheit = (data.main.temp - 273.15) * 1.80 + 32;
+            cityTemp.textContent = fahrenheit.toFixed(2);
+
+            let mph = (data.wind.speed)* 2.237;
+            cityWind.textContent = mph.toFixed(1)+" MPH";
+    
             console.log(data);
         })
 
@@ -47,6 +58,9 @@ function searchForecast (event){
             console.error("Error: ", error)
         })
 
+        
+ // forcast api call
+    let forecastApiUrl = "https://api.openweathermap.org/data/2.5/forecast?q="+searchInputVal.value.trim()+"&appid="+ apiKey;
 }
 
 // Search input and button function
