@@ -1,12 +1,12 @@
 # Weather-Dashboard
 
 ## Description
-bootcamp challenge 6
+This application lets you see the current weather and the next five day forecast with weather icons. It saves searched cities into local storage and data is retrived via API calls from OpenWeatherMap.
 
 ## Website
-
+https://alexm745.github.io/weather-dashboard/
 ## Mock up
-
+![alt text](/assets/screenshot.png)
 ## User story
 
 AS A traveler
