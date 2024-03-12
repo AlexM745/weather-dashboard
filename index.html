@@ -22,13 +22,13 @@
         <h1>Weather Dashboard</h1>
     </header>
     <!-- main body -->
-    <main class="justify-content-space">
+    <main class="container">  
         <!-- search city form and search history -->
-        <div class="col-3 border ">
+        <div class="row border ">
             <!-- search form and search button -->
-            <div class=" col-sm-12 search-section">
+            <div class=" col-sm-4 search-section">
                 <h2>Search for a City : </h2>
-                <form class="w-100"  id="search-form">
+                <form class="mb-3"  id="search-form">
                     <input id="search-input" class=" col-11 rounded searchform" type="text"
                         placeholder="Ex: San Antonio, Texas">
                     <button id="search-button" class="col-5 rounded " type="submit">Search</button>
@@ -37,56 +37,59 @@
         </div>
           <!-- search history -->
           <div>
-            <div id="search-history" class="col-sm-3 m-2 border recent-search"> Search History</div>
+            <div id="search-history" class="col-sm-3 m-2 border recent-search">
+                <ol id="history-list"></ol>
+            </div>
         </div>
           
         <!--  Forecasts -->
-        <div class="row col-sm-12 d-flex justify-content-end border">
-            <!-- current day forecast -->
-            <div class=" col-6 bg-primary-subtle rounded m-3 "  id="current-forecast">
-                <h2 id="city-name"></h2>
-                <p>Temp:  <span id="curtemp"></span> </p>
-                <p>Wind:  <span id="curwind"></span> </p>
-                <p>Humidity: : <span id="curhumid"></span> </p>
-            </div>
-            <!-- 5 day Forecast -->
-            <div class=" col-9 mt-3" id="weekly-forecast">
-                <h3> 5-day Forecast:</h3><i class="fa-duotone fa-sun"></i>
-                <!-- The 5 day boxes in a row -->
-                <div class="row">
-                    <div class="col-2 mb-4 p-4 m-3 mt-3 rounded bg-info">
-                        <h3 id="date0"></h3>
-                        <p>Temp: <span id="temp0"></span></p>
-                        <p>Wind: <span id=win0></span></p>
-                        <p>Humidity: <span id="humid0"></span></p>
-                    </div>
-                    <div class="col-2 mb-4 p-4 m-3 mt-3 rounded bg-info">
-                        <h3 id="date1"></h3>
-                        <p>Temp: <span id="temp1"></span></p>
-                        <p>Wind: <span id=win1></span></p>
-                        <p>Humidity: <span id="humid1"></span></p>
-                    </div>
-                    <div class="col-2 mb-4 p-4 m-3 mt-3 rounded bg-info">
-                        <h3 id="date2"></h3>
-                        <p>Temp:  <span id="temp2"></span></p>
-                        <p>Wind:  <span id=win2></span></p>
-                        <p>Humidity: : <span id="humid2"></span></p>
-                    </div>
-                    <div class="col-2 mb-4 p-4 m-3 mt-3 rounded bg-info">
-                        <h3 id="date3"></h3>
-                        <p>Temp: <span id="temp3"></span></p>
-                        <p>Wind: <span id=win3></span></p>
-                        <p>Humidity: <span id="humid3"></span></p>
-                    </div>
-                    <div class="col-2 mb-4 p-4 m-3 mt-3 rounded bg-info">
-                        <h3 id="date4"></h3>
-                        <p>Temp: <span id="temp4"></span></p>
-                        <p>Wind: <span id=win4></span></p>
-                        <p>Humidity: <span id="humid4"></span></p>
-                    </div>
+        <div class="col-sm-8  border ">
+            <div class="row ml-2">
+                <!-- current day forecast -->
+                <div class=" col-sm-12  bg-primary-subtle rounded m-3 "  id="current-forecast">
+                    <h2 id="city-name" class="mb-1 mt-2"></h2>
+                    <p>Temp:  <span id="curtemp"></span> </p>
+                    <p>Wind:  <span id="curwind"></span> </p>
+                    <p>Humidity: : <span id="curhumid"></span> </p>
+                </div>
+                <!-- 5 day Forecast -->
+                <div class=" col-9 mt-3" id="weekly-forecast">
+                    <h3> 5-day Forecast:</h3><i class="fa-duotone fa-sun"></i>
+                    <!-- The 5 day boxes in a row -->
+                    <div class="row">
+                        <div class="col-2 mb-4 p-4 m-3 mt-3 rounded bg-info">
+                            <h3 id="date0"></h3>
+                            <p>Temp: <span id="temp0"></span></p>
+                            <p>Wind: <span id=win0></span></p>
+                            <p>Humidity: <span id="humid0"></span></p>
+                        </div>
+                        <div class="col-2 mb-4 p-4 m-3 mt-3 rounded bg-info">
+                            <h3 id="date1"></h3>
+                            <p>Temp: <span id="temp1"></span></p>
+                            <p>Wind: <span id=win1></span></p>
+                            <p>Humidity: <span id="humid1"></span></p>
+                        </div>
+                        <div class="col-2 mb-4 p-4 m-3 mt-3 rounded bg-info">
+                            <h3 id="date2"></h3>
+                            <p>Temp:  <span id="temp2"></span></p>
+                            <p>Wind:  <span id=win2></span></p>
+                            <p>Humidity: : <span id="humid2"></span></p>
+                        </div>
+                        <div class="col-2 mb-4 p-4 m-3 mt-3 rounded bg-info">
+                            <h3 id="date3"></h3>
+                            <p>Temp: <span id="temp3"></span></p>
+                            <p>Wind: <span id=win3></span></p>
+                            <p>Humidity: <span id="humid3"></span></p>
+                        </div>
+                        <div class="col-2 mb-4 p-4 m-3 mt-3 rounded bg-info">
+                            <h3 id="date4"></h3>
+                            <p>Temp: <span id="temp4"></span></p>
+                            <p>Wind: <span id=win4></span></p>
+                            <p>Humidity: <span id="humid4"></span></p>
+                        </div>
 
-
- 
+                    </div>
+    
                 </div>
 
             </div>
